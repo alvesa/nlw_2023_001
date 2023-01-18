@@ -1,5 +1,7 @@
 import FastiFy from 'fastify'
-import { PrismaClient}  from '@prisma/client'
+import { PrismaClient } from '@prisma/client'
+
+const PORT = +(process.env.PORT ?? '3333');
 
 const app = FastiFy()
 const prisma = new PrismaClient()
@@ -11,7 +13,7 @@ app.get('/hello', async () => {
 })
 
 app.listen({
-  port: 3333
+  port: PORT
 }).then(() => {
   console.log('HTTP server is running')
 });
