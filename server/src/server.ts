@@ -1,16 +1,10 @@
 import FastiFy from 'fastify'
-import { PrismaClient } from '@prisma/client'
+import { appRoutes } from './routes';
 
 const PORT = +(process.env.PORT ?? '3333');
-
 const app = FastiFy()
-const prisma = new PrismaClient()
 
-app.get('/hello', async () => {
-  const habits = await prisma.habit.findMany()
-
-  return habits;
-})
+app.register(appRoutes);
 
 app.listen({
   port: PORT
