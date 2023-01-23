@@ -48,7 +48,7 @@ export function NewHabitForm() {
         type='text'
         id='title'
         placeholder='ex.: Exercicios, dormir bem, etc...'
-        className='p-4 rounded-lg mt-3 bg-zinc-800 text-white placeholder:text-zinc-400'
+        className='p-4 rounded-lg mt-3 bg-zinc-800 text-white placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-violet-700 focus:ring-offset-2 focus focus:ring-offset-zinc-900'
         autoFocus
         value={title}
       />
@@ -65,7 +65,7 @@ export function NewHabitForm() {
             checked={weekDays.includes(index)}
             onCheckedChange={() => handleToggleWeekDay(index)}
           >
-            <div className='h-8 w-8 rounded-lg flex items-center justify-center bg-zinc-900 border-2 border-zinc-800 group-data-[state=checked]:bg-violet-500 group-data-[state=checked]:border-violet-500'>
+            <div className='h-8 w-8 rounded-lg flex items-center justify-center bg-zinc-900 border-2 border-zinc-800 group-data-[state=checked]:bg-violet-500 group-data-[state=checked]:border-violet-500 group-focus:outline-none group-focus:ring-2 group-focus:ring-violet-700 group-focus:ring-offset-2 focus group-focus:ring-offset-zinc-900'>
               <CheckBox.Indicator>
                 <Check size={20} className='text-white' />
               </CheckBox.Indicator>
@@ -77,7 +77,7 @@ export function NewHabitForm() {
         ))}
       </div>
 
-      <button type='submit' className='mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-green-600 hover:bg-green-500'>
+      <button type='submit' className='mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-violet-600 hover:bg-violet-500 transition-colors'>
         <Check size={20} weight='bold' />
         Confirmar
       </button>

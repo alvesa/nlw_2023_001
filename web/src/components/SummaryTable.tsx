@@ -23,7 +23,6 @@ export function SummaryTable() {
   useEffect(() => {
     api.get('summary').then(response => {
       setSummary(response.data)
-      // setSummary([{id: '388929fd-a616-4ff8-91f3-d7e06102f91e', date: '2023-01-02T03:00:00.000Z', completed: 1, amount: 1}])
     })
   }, []);
 
@@ -39,14 +38,14 @@ export function SummaryTable() {
         })}
       </div>
       <div className='grid grid-rows-7 grid-flow-col gap-3'>
-        {summaryDates.map(date => {
+        {summary && summary.length && summaryDates.map(date => {
           const dayInSummary = summary.find(day => {
             return dayjs(date).isSame(day.date, 'day')
           })
           return  (
             <HabitDay
               amount={dayInSummary?.amount}
-              completed={dayInSummary?.completed}
+              defaultCompleted={dayInSummary?.completed}
               date={date}
               key={date.toString()
             }/>
