@@ -51,7 +51,7 @@ export function HabitsList({ date, onCompletedChange }: HabitlistProps) {
     onCompletedChange(completedHabits.length)
   }
 
-  const isDateInPast = dayjs().endOf('day').isBefore(new Date());
+  const isDateInPast = dayjs(date).endOf('day').isBefore(new Date());
 
   return (
     <div className='mt-6 flex flex-col gap-3'>

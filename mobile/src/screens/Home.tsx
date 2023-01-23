@@ -30,28 +30,8 @@ export function Home() {
   async function fetchData() {
     try {
       setLoading(true)
-      // const response = await api.get('/summary')
+      const { data } = await api.get('/summary')
 
-      const data = [
-        {
-            id: "388929fd-a616-4ff8-91f3-d7e06102f91e",
-            date: "2023-01-02T03:00:00.000Z",
-            completed: 1,
-            amount: 1
-        },
-        {
-            id: "d394ee4b-5a28-4475-b0a2-cbe935c77939",
-            date: "2023-01-06T03:00:00.000Z",
-            completed: 1,
-            amount: 1
-        },
-        {
-            id: "fabcb592-636e-4d3f-9a83-519803a91362",
-            date: "2023-01-04T03:00:00.000Z",
-            completed: 2,
-            amount: 2
-        }
-    ]
       setSummary(data)
     } catch (error) {
       Alert.alert('Ops', 'Nao foi possivel carregar o sumario de habitos')
